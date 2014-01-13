@@ -1,8 +1,8 @@
 [user]
-	name = Henrik Nyh
-	email = henrik@nyh.se
+	name = Tomas Skogberg
+	email = tomas.skogberg@gmail.com
 [core]
-	excludesfile = /Users/henrik/.gitignore
+	excludesfile = /Users/tomas/.gitignore
 	ignorecase = false
 [color]
 	status = auto
@@ -17,7 +17,7 @@
 	uncommit = reset --soft HEAD^
 	unref = reset --soft HEAD@{1}
 	subs = submodule foreach git pull origin master
-        hist = recent-branches
+  hist = recent-branches
 [gist]
 	private = yes
 	extension = rb
@@ -29,9 +29,10 @@
 	browser = open
 [merge]
 	tool = vimdiff
-
 [mergetool "vimdiff"]
 	cmd = vim -d "$LOCAL" "$MERGED" "$REMOTE"
 	trustExitCode = true
 [branch]
 	autosetuprebase = always
+[github]
+	user = tskogberg
