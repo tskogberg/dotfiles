@@ -6,7 +6,7 @@ This is a fork of [Henrik's](https://github.com/henrik) dotfiles.
 
 Clone this repo into `~/.dotfiles`:
 
-    git clone git@github.com:henrik/dotfiles.git ~/.dotfiles
+    git clone git@github.com:tskogberg/dotfiles.git ~/.dotfiles
 
 Then install the dotfiles:
 
