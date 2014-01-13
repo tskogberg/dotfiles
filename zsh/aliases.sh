@@ -27,7 +27,7 @@ elif ls -G -d . >/dev/null 2>&1; then
 fi
 
 # I always forget the common options.
-alias rsync?="echo 'rsync -az --progress server:/path/ path (Slashes are significant.)'"
+alias rsync\?="echo 'rsync -az --progress server:/path/ path (Slashes are significant.)'"
 
 # Ruby on Rails
 alias sc="[ -f script/console ] && script/console || bundle exec rails console"
