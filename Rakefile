@@ -85,4 +85,5 @@ task :install do
   end
 
   system "git submodule update --init"
+  system "cp -r ~/.dotfiles/oh-my-zsh-custom/ ~/.oh-my-zsh/"
 end
