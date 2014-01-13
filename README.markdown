@@ -1,5 +1,7 @@
 # My dotfiles
 
+This is a fork of [Henrik's](https://github.com/henrik) dotfiles.
+
 ## Install
 
 Clone this repo into `~/.dotfiles`:
@@ -13,7 +15,7 @@ Then install the dotfiles:
 
 This rake task will not replace existing files, but it will replace existing symlinks.
 
-The dotfiles will be symlinked, e.g. `~/.bash_profile` symlinked to `~/.dotfiles/bash_profile`.
+The dotfiles will be symlinked, e.g. `~/.zshrc` symlinked to `~/.dotfiles/zshrc`.
 
 
 ## Vim
