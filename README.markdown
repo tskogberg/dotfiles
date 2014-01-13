@@ -17,20 +17,11 @@ This rake task will not replace existing files, but it will replace existing sym
 
 The dotfiles will be symlinked, e.g. `~/.zshrc` symlinked to `~/.dotfiles/zshrc`.
 
-
-## Vim
-
-Install plugins from submodules:
-
-    git submodule update --init
-
-
 ## tmux
 
 Make it integrate with the OS X system clipboard:
 
     brew install reattach-to-user-namespace
-
 
 ## Extras
 
