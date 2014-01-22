@@ -1,4 +1,6 @@
 DO_NOT_SYMLINK = %w[
+  oh-my-zsh-custom
+  oh-my-zsh
   .gitignore
   extras
   Rakefile
@@ -23,7 +25,7 @@ def switch_to_zsh
     puts "using zsh"
   else
     puts "switching to zsh"
-    system %Q{chsh -s `which zsh`}
+    system %Q{chsh -s `which zsh` tomas}
   end
 end
 
