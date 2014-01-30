@@ -13,7 +13,17 @@
 "   let(:foo) { x }
 "
 function! s:PromoteToLet()
-  .s/@\?\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  let current_line = getline('.')
+  let equals = '@\?\w\+ = .*$'
+  let let = 'let(:\w\+)\s{\s.*\s}$'
+
+  if current_line =~ equals
+    .s/@\?\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  elseif current_line =~ let
+    .s/let(:\(\w\+\))\s{\s\(.*\)\s}$/\1 = \2/
+  else
+    echom 'no match'
+  endif
 endfunction
 
 command! -range Let execute '<line1>,<line2>call <SID>PromoteToLet()'
