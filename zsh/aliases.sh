@@ -49,8 +49,8 @@ alias rsp="rake testbot:spec"
 alias g="git"
 alias gs="git status"
 alias gw="git show"
-alias gw^="git show HEAD^"
-alias gw^^="git show HEAD^^"
+alias gw\^="git show HEAD\^"
+alias gw\^\^="git show HEAD\^\^"
 alias gd="git diff-index HEAD -p --color"  # What's changed? Both staged and unstaged.
 alias gdo="git diff --cached"  # What's changed? Only staged (added) changes.
 # for gco ("git commit only") and gca ("git commit all"), see functions.sh.
