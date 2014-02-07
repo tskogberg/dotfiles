@@ -1,20 +1,19 @@
 # Management
 alias dots="cd ~/.dotfiles && vim"
-alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
+alias reload='source ~/.zshrc && echo "sourced ~/.zshrc"'
 alias redot='cd ~/.dotfiles && gpp && rake install; cd -'
 
 alias hosts='sudo vim /etc/hosts'
 alias vrb='vim -c "setf ruby"'
 
-# http://www.hogbaysoftware.com/products/plaintext
-alias text='cd ~/Dropbox/PlainText && vim'
+# http://www.hogbaysoftware.com/products/writeroom
+alias text='cd ~/Dropbox/WhiteRoom && vim'
 
 # Shell
 alias la='ls -alh'
 alias cdd='cd -'  # back to last directory
 alias pg='ps aux | grep '
 alias tf='tail -F -n200'
-alias top='top -ocpu'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

@@ -14,7 +14,7 @@ function o {
 # With no argument, opens an editor that also shows the diff (-v).
 
 function gco {
-  [ -z "$1" ] && git commit -v || git commit -m "$1"
+  [ -z $1 ] && git commit -v || git commit -m $1
 }
 
 
@@ -24,7 +24,7 @@ function gco {
 # With no argument, opens an editor that also shows the diff (-v).
 
 function gca {
-  git add --all && gco "$1"
+  git add --all && gco $1
 }
 
 
@@ -44,7 +44,7 @@ function cdgem {
 #     /Users/henrik/.dotfiles/ackrc
 
 function pwf {
-  echo "$PWD/$1"
+  echo $PWD/$1
 }
 
 
@@ -54,7 +54,7 @@ function pwf {
 #     henrik@Nyx /tmp/foo/bar/baz$
 
 function mcd {
-  mkdir -p "$1" && cd "$1"
+  mkdir -p $1 && cd $1
 }
 
 
