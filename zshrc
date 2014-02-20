@@ -54,6 +54,7 @@ export LANG=sv_SE.UTF-8
 #
 # Alternatively, copy/symlink this file and source in your shell.  See `hitch --setup-path`.
 
+# Hitch setup
 hitch() {
   command hitch "$@"
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
