@@ -89,7 +89,7 @@ alias tcopy="tmux show-buffer | pbcopy"
 alias tn="tmux new -s "
 
 # Servers
-alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
+alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
 
 # Work
 
