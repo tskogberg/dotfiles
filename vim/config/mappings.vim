@@ -84,3 +84,9 @@ autocmd BufNewFile,BufRead /Users/henrik/Dropbox/Code/exercism/* nmap § :Exerci
 
 " Tell other tmux pane to ctrl+c.
 nmap <leader>§ :VimuxInterruptRunner<CR>
+
+" Open public I18n translation files
+nmap <leader>pu :tabe <BAR> :args config/locales/{en,sv,de}.yml <BAR> vertical all<CR>
+
+" Open admin I18n translation files
+nmap <leader>ad :tabe <BAR> :args config/locales/admin.{en,sv,de}.yml <BAR> vertical all<CR>
