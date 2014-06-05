@@ -99,3 +99,5 @@ alias prodc="ssh pa -t screen -RD"
 
 # Other
 alias v="vagrant"
+
+source ~/.dotfiles/zsh/gitpair.sh
