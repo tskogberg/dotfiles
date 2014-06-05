@@ -1,6 +1,5 @@
 DO_NOT_SYMLINK = %w[
   oh-my-zsh-custom
-  oh-my-zsh
   .gitignore
   extras
   Rakefile
