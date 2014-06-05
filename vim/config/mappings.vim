@@ -90,3 +90,6 @@ nmap <leader>pu :tabe <BAR> :args config/locales/{en,sv,de}.yml <BAR> vertical a
 
 " Open admin I18n translation files
 nmap <leader>ad :tabe <BAR> :args config/locales/admin.{en,sv,de}.yml <BAR> vertical all<CR>
+
+" Close a tab
+nmap <leader>tc :tabclose<CR>
