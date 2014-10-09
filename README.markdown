@@ -21,7 +21,7 @@ The dotfiles will be symlinked, e.g. `~/.zshrc` symlinked to `~/.dotfiles/zshrc`
 
 To update submodules you can run:
 
-    git submodule foreach git pull
+    git submodule foreach git checkout master && git pull
 
 ## tmux
 
