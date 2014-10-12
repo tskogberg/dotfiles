@@ -10,8 +10,6 @@ ZSH_THEME="headie"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.dotfiles/zsh/*.sh
-
 [[ -s ~/.profile ]] && source ~/.profile
 
 # Set to this to use case-sensitive completion
@@ -36,6 +34,11 @@ plugins=(git brew gem headie)
 
 source $ZSH/oh-my-zsh.sh
 
+# Custom plugins/setup
+for file in ~/.dotfiles/zsh/*.sh; do
+  source "$file"
+done
+
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
@@ -50,3 +53,9 @@ export LANG=sv_SE.UTF-8
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
+
+# Bash completion
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+fi
