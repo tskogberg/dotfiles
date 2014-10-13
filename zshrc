@@ -49,13 +49,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Set UTF-8 as default
 export LANG=sv_SE.UTF-8
-#export LC_ALL=sv_SE.UTF-8
+export LC_ALL=sv_SE.UTF-8
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
-
-# Bash completion
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-fi
