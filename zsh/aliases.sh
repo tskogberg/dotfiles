@@ -82,11 +82,11 @@ alias hc="heroku run console"
 alias hlog="heroku logs -t"
 
 # tmux
-alias ta="tmux attach"
+alias tn="tmux new -s "
+ta() { if [ ! $1 ]; then tmux attach; else tmux attach -t $1; fi }
 # With tmux mouse mode on, just select text in a pane to copy.
 # Then run tcopy to put it in the OS X clipboard (assuming reattach-to-user-namespace).
 alias tcopy="tmux show-buffer | pbcopy"
-alias tn="tmux new -s "
 
 # Servers
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
