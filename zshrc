@@ -49,7 +49,6 @@ PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # Set UTF-8 as default
 export LANG=sv_SE.UTF-8
-export LC_ALL=sv_SE.UTF-8
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
