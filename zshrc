@@ -40,7 +40,7 @@ for file in ~/.dotfiles/zsh/*.sh; do
 done
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Set default editor
 export EDITOR=vim
