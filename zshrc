@@ -1,3 +1,6 @@
+# Set UTF-8 as default
+export LANG=sv_SE.UTF-8
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -6,11 +9,6 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="headie"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-[[ -s ~/.profile ]] && source ~/.profile
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -45,10 +43,8 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # Set default editor
 export EDITOR=vim
 
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-
-# Set UTF-8 as default
-export LANG=sv_SE.UTF-8
+# Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
