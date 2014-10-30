@@ -48,3 +48,6 @@ PATH=$HOME/.rvm/bin:$PATH
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
+
+# Load .profile, VMs need it
+[[ -s ~/.profile ]] && source ~/.profile
