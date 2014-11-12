@@ -93,3 +93,6 @@ nmap <leader>ad :tabe <BAR> :args config/locales/admin.{en,sv,de}.yml <BAR> vert
 
 " Close a tab
 nmap <leader>tc :tabclose<CR>
+
+" Remove trailing whitespace
+nmap <leader>ws :%s/\s\+$//<CR>
