@@ -1,4 +1,5 @@
 DO_NOT_SYMLINK = %w[
+  oh-my-zsh
   oh-my-zsh-custom
   .gitignore
   extras

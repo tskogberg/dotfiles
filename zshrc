@@ -40,11 +40,8 @@ done
 # Customize to your needs...
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
-# Set default editor
-export EDITOR=vim
-
 # Add RVM to PATH for scripting
-PATH=$HOME/.rvm/bin:$PATH
+export PATH=$HOME/.rvm/bin:$PATH
 
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
