@@ -86,10 +86,10 @@ autocmd BufNewFile,BufRead /Users/henrik/Dropbox/Code/exercism/* nmap § :Exerci
 nmap <leader>§ :VimuxInterruptRunner<CR>
 
 " Open public I18n translation files
-nmap <leader>pu :tabe <BAR> :args config/locales/{en,sv,de}.yml <BAR> vertical all<CR>
+nmap <leader>pu :tabe <BAR> :args config/locales/{sv,en,de}.yml <BAR> vertical all<CR>
 
 " Open admin I18n translation files
-nmap <leader>ad :tabe <BAR> :args config/locales/admin.{en,sv,de}.yml <BAR> vertical all<CR>
+nmap <leader>ad :tabe <BAR> :args config/locales/admin.{sv,en,de}.yml <BAR> vertical all<CR>
 
 " Close a tab
 nmap <leader>tc :tabclose<CR>
