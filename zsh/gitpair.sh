@@ -16,4 +16,5 @@ alias paira='setpair  AR+TS  all+albert+tomas@barsoom.se  "Albert Ramstedt and T
 alias pairj='setpair  JK+TS  all+jocke+tomas@barsoom.se   "Joakim Kolsjö and Tomas Skogberg"'
 alias pairk='setpair  KP+TS  all+kim+tomas@barsoom.se     "Kim Persson and Tomas Skogberg"'
 alias pairh='setpair  HN+TS  all+henrik+tomas@barsoom.se  "Henrik Nyh and Tomas Skogberg"'
-alias pairv='setpair  TS+VA  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Arias"'
+alias pairva='setpair  TS+VA  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Arias"'
+alias pairvk='setpair  TS+VK  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Koronen"'

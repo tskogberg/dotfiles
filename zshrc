@@ -48,3 +48,6 @@ export PATH=$HOME/.rvm/bin:$PATH
 
 # Load .profile, VMs need it
 [[ -s ~/.profile ]] && source ~/.profile
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
