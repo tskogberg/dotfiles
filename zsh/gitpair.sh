@@ -13,8 +13,12 @@ setpair() { git config user.pair "$1" && git config user.email "$2" && git confi
 
 # Add one of these for every pair. Each pair should be in alphabetical order by first name.
 alias paira='setpair  AR+TS  all+albert+tomas@barsoom.se  "Albert Ramstedt and Tomas Skogberg"'
+alias pairf='setpair  FH+TS  all+fabian+tomas@barsoom.se  "Fabian Hoffmann and Tomas Skogberg"'
+alias pairh='setpair  HN+TS  all+henrik+tomas@barsoom.se  "Henrik Nyh and Tomas Skogberg"'
 alias pairj='setpair  JK+TS  all+jocke+tomas@barsoom.se   "Joakim Kolsjö and Tomas Skogberg"'
 alias pairk='setpair  KP+TS  all+kim+tomas@barsoom.se     "Kim Persson and Tomas Skogberg"'
-alias pairh='setpair  HN+TS  all+henrik+tomas@barsoom.se  "Henrik Nyh and Tomas Skogberg"'
+alias pairp='setpair  PS+TS  all+peder+tomas@barsoom.se  "Peder Slettengren and Tomas Skogberg"'
 alias pairva='setpair  TS+VA  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Arias"'
 alias pairvk='setpair  TS+VK  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Koronen"'
+alias pairjl='setpair  JK+LF+TS  all+jocke+lennart+tomas@barsoom.se   "Joakim Kolsjö, Lennart Fridén, and Tomas Skogberg"'
+alias pairfk='setpair  FH+KP+TS  all+fabian+kim+tomas@barsoom.se   "Fabian Hoffmann, Kim Persson, and Tomas Skogberg"'
