@@ -22,3 +22,5 @@ alias pairva='setpair  TS+VA  all+tomas+victor@barsoom.se  "Tomas Skogberg and V
 alias pairvk='setpair  TS+VK  all+tomas+victor@barsoom.se  "Tomas Skogberg and Victor Koronen"'
 alias pairjl='setpair  JK+LF+TS  all+jocke+lennart+tomas@barsoom.se   "Joakim Kolsjö, Lennart Fridén, and Tomas Skogberg"'
 alias pairfk='setpair  FH+KP+TS  all+fabian+kim+tomas@barsoom.se   "Fabian Hoffmann, Kim Persson, and Tomas Skogberg"'
+alias pairjk='setpair  JK+KP+TS  all+jocke+kim+tomas@barsoom.se   "Joakim Kolsjö, Kim Persson, and Tomas Skogberg"'
+alias pairmob='setpair MOB devs@auctionet.com "Mob"'
