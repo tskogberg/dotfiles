@@ -98,7 +98,7 @@ alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
 # Assumes there is only one screen running.
 alias prodc="ssh pa -t screen -RD"
 
-alias udgems="git pull && dev && bundle update && rake && rake spec && git commit -a -m 'Update gems' && git show && dev stop && echo 'Amend to the commit message if there in any big changes and dont forget to run dev bundle!'"
+alias udgems="git pull && dev && bundle update && (git status | grep 'not staged' &>/dev/null && (test -f Rakefile && rake && rake spec) || git commit -a -m 'Update gems' && git show && echo 'Amend to the commit message if there in any big changes and dont forget to run dev bundle!')|| dev stop"
 # Other
 alias v="vagrant"
 
