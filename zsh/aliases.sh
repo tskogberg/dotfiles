@@ -102,16 +102,16 @@ udgems() {
   git pull
   dev
   bundle update
-  git status
-  if !grep 'not staged' &>/dev/null; then
+  git status | grep "not staged"
+  if [ $? -eq 0 ]; then
     if [ -d spec ]; then
       rake
       rake spec
     fi
 
-    git commit -a -m 'update gems'
+    git commit -a -m "update gems"
     git show
-    echo 'Amend to the commit message if there in any big changes and dont forget to run dev bundle!'
+    echo "Amend to the commit message if there in any big changes and dont forget to run dev bundle!"
   fi
 
   dev stop
