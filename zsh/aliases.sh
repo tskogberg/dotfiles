@@ -109,7 +109,7 @@ udgems() {
       rake spec
     fi
 
-    git commit -a -m "update gems"
+    git commit -a -m "Update gems"
     git show
     echo "Amend to the commit message if there in any big changes and dont forget to run dev bundle!"
   fi
