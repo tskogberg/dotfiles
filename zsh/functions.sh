@@ -13,6 +13,7 @@ function o {
 # When given an argument, uses that for a message.
 # With no argument, opens an editor that also shows the diff (-v).
 
+unalias gco 2>/dev/null  # ohmyzsh might define it
 function gco {
   [ -z $1 ] && git commit -v || git commit -m $1
 }
@@ -23,6 +24,7 @@ function gco {
 # When given an argument, uses that for a message.
 # With no argument, opens an editor that also shows the diff (-v).
 
+unalias gca 2>/dev/null  # ohmyzsh might define it
 function gca {
   git add --all && gco $1
 }
