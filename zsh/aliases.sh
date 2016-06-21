@@ -113,6 +113,12 @@ udgems() {
     git commit -a -m "Update gems"
     git show
     echo "Amend to the commit message if there in any big changes and dont forget to run dev bundle!"
+  else
+    echo "Nothing to update!"
+  fi
+
+  if [ $1 ]; then
+    echo "Outdated:" `bundle outdated|grep '* '|wc -l`
   fi
 
   dev stop
