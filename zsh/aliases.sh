@@ -102,11 +102,11 @@ udgems() {
   git pull
   dev
   bundle update
-  git status | grep "not staged"
+  git status | grep "not staged" &>/dev/null
   if [ $? -eq 0 ]; then
     if [ -d spec ]; then
-      rake
-      rake spec
+      rake || return
+      rake spec || return
     fi
 
     git commit -a -m "Update gems"
