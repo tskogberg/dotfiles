@@ -117,3 +117,6 @@
 [submodule "lib/tmux-powerline"]
 	path = lib/tmux-powerline
 	url = https://github.com/tskogberg/tmux-powerline.git
+[submodule "vim/bundle/vim-yaml-helper"]
+	path = vim/bundle/vim-yaml-helper
+	url = git@github.com:lmeijvogel/vim-yaml-helper.git
