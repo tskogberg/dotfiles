@@ -73,3 +73,8 @@ task :install do
   system "git submodule update --init"
   system "cp -R ~/.dotfiles/oh-my-zsh-custom/* ~/.oh-my-zsh/"
 end
+
+desc "Update git submodules."
+task :update_subs do
+  system("git submodule foreach git pull origin master")
+end
