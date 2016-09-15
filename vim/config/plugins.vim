@@ -21,6 +21,10 @@ let g:ctrlp_match_window = 'min:4,max:72'
 " projects that has nested git directories.
 let g:ctrlp_working_path_mode = 0
 
+" Ignores for elixir projects
+" ctrlp does not seem to respect wildignore for this?
+let g:ctrlp_custom_ignore = '\v[\/](deps|_build|node_modules|priv\/static|web\/static\/vendor\/compiled_elm/)$'
+
 " Files to skip.
 " Possibly used by other plugins, like Command-T.
 set wildignore+=*.o,*.obj,.git,tmp
