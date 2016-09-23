@@ -38,7 +38,7 @@ for file in ~/.dotfiles/zsh/*.sh; do
 done
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
 # Add RVM to PATH for scripting
 export PATH=$HOME/.rvm/bin:$PATH
@@ -49,5 +49,5 @@ export PATH=$HOME/.rvm/bin:$PATH
 # Load .profile, VMs need it
 [[ -s ~/.profile ]] && source ~/.profile
 
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
