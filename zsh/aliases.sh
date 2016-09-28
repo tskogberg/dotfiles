@@ -46,6 +46,7 @@ alias rsp="rake testbot:spec"
 
 # Git
 alias g="git"
+alias ga="git add"
 alias gl="git pull --rebase"
 alias gs="git status"
 alias gst="gs"
