@@ -110,8 +110,8 @@ udgems() {
   git status | grep "not staged" &>/dev/null
   if [ $? -eq 0 ]; then
     if [ -d spec ]; then
-      rake || return
-      rake spec || return
+      bundle exec rake || return
+      bundle exec rake spec || return
     fi
 
     git commit -a -m "Update gems"
