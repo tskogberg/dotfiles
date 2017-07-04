@@ -131,5 +131,3 @@ udgems() {
 
 # Other
 alias v="vagrant"
-
-source ~/.dotfiles/zsh/gitpair.sh
