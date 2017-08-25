@@ -51,3 +51,4 @@ export PATH=$HOME/.rvm/bin:$PATH
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+[[ $OSTYPE =~ "darwin" ]] && ssh-add -K
