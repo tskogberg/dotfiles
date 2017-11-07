@@ -85,6 +85,7 @@ alias hp="git push heroku"
 alias hmig="heroku run rake db:migrate"
 alias ho="heroku open"
 alias hc="heroku run console"
+alias hsc="heroku run console -r production"  # Make Henrik happy
 alias hlog="heroku logs -t"
 
 # tmux
@@ -128,6 +129,8 @@ udgems() {
 
   dev stop
 }
+
+alias mobstation="ps ax|grep ssh|grep 9933|grep localhost|awk '{ print \$1 }'|xargs kill; ssh mob -L 9933:localhost:5900 -nNT 2> /dev/null & open vnc://localhost:9933"
 
 # Other
 alias v="vagrant"
