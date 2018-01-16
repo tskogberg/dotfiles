@@ -56,3 +56,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Store ssh password in keychain. This will stop git from asking for the password.
 [[ $OSTYPE =~ "darwin" ]] && ssh-add -K
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
