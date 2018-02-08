@@ -18,6 +18,7 @@
 	unref = reset --soft HEAD@{1}
 	subs = submodule foreach git pull origin master
   hist = recent-branches
+	stats = shortlog -s -n
 [gist]
 	private = yes
 	extension = rb
