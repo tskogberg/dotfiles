@@ -134,3 +134,9 @@ alias mobstation="ps ax|grep ssh|grep 9933|grep localhost|awk '{ print \$1 }'|xa
 
 # Other
 alias v="vagrant"
+loop_me() {
+  while true; do
+    eval $1;
+    sleep ${2:=1};
+  done
+}
