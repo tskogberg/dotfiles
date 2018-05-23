@@ -30,6 +30,8 @@ ZSH_THEME="headie"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew bundler git gem headie)
 
+# This will fix completion warning: https://github.com/robbyrussell/oh-my-zsh/issues/6461
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # Custom plugins/setup
