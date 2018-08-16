@@ -37,3 +37,5 @@
 	autosetuprebase = always
 [github]
 	user = tskogberg
+[credential]
+	helper = cache
