@@ -126,3 +126,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule "vim/bundle/elm-vim"]
+	path = vim/bundle/elm-vim
+	url = https://github.com/ElamCast/elm-vim
