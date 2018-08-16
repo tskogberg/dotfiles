@@ -126,3 +126,8 @@ let g:elm_detailed_complete = 0
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 let g:elm_setup_keybindings = 0
+
+" ale
+
+" Enable completion where available.
+let g:ale_completion_enabled = 1
