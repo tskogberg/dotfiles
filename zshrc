@@ -28,7 +28,7 @@ ZSH_THEME="headie"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler git gem headie)
+plugins=(brew bundler git gem headie zsh-syntax-highlighting)
 
 # This will fix completion warning: https://github.com/robbyrussell/oh-my-zsh/issues/6461
 ZSH_DISABLE_COMPFIX=true
