@@ -114,9 +114,6 @@
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
-[submodule "lib/tmux-powerline"]
-	path = lib/tmux-powerline
-	url = https://github.com/tskogberg/tmux-powerline.git
 [submodule "vim/bundle/vim-yaml-helper"]
 	path = vim/bundle/vim-yaml-helper
 	url = git@github.com:lmeijvogel/vim-yaml-helper.git
@@ -135,3 +132,6 @@
 [submodule "vim/bundle/vim-mix-format"]
 	path = vim/bundle/vim-mix-format
 	url = https://github.com/mhinz/vim-mix-format
+[submodule "lib/powerline"]
+	path = lib/powerline
+	url = https://github.com/powerline/powerline
