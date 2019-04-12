@@ -58,9 +58,9 @@ alias gd="git diff-index HEAD -p --color | less"  # What's changed? Both staged 
 alias gdo="git diff --cached"  # What's changed? Only staged (added) changes.
 # for gco ("git commit only") and gca ("git commit all"), see functions.sh.
 alias gcaf="git add --all && git commit --no-verify -m"
-alias gcac="gca Cleanup."
-alias gcoc="gco Cleanup."
-alias gcaw="gca Whitespace."
+alias gcac="gca Cleanup"
+alias gcoc="gco Cleanup"
+alias gcaw="gca Whitespace"
 alias emptycommit="git commit -m 'Empty commit' --allow-empty"
 alias gp="git push"
 alias gpp='git pull --rebase && git push'
