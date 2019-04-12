@@ -59,3 +59,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Devbox, workaround for the command cache.
+[[ -s "$HOME/.shell_local" ]] && source "$HOME/.shell_local"
