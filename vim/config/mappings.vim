@@ -89,7 +89,7 @@ nmap <leader>§ :VimuxInterruptRunner<CR>
 nmap <leader>r :so $MYVIMRC<CR>
 
 " Git grep for <cword>
-nmap <leader>s :GitGrep <cword><CR>
+nmap <leader>s * :GitGrep <cword><CR>
 
 " Open public I18n translation files
 nmap <leader>pu :tabe <BAR> :args config/locales/{sv,en,de}.yml <BAR> vertical all<CR>
