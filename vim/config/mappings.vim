@@ -85,6 +85,8 @@ autocmd BufNewFile,BufRead /Users/henrik/Dropbox/Code/exercism/* nmap § :Exerci
 " Tell other tmux pane to ctrl+c.
 nmap <leader>§ :VimuxInterruptRunner<CR>
 
+" Reload vimrc
+nmap <leader>r :so $MYVIMRC<CR>
 " Open public I18n translation files
 nmap <leader>pu :tabe <BAR> :args config/locales/{sv,en,de}.yml <BAR> vertical all<CR>
 
