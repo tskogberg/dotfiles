@@ -1,5 +1,5 @@
 # Management
-alias dots="cd ~/.dotfiles && vim"
+alias dots="cd ~/.dotfiles && vim ."
 alias reload='source ~/.zshrc && echo "sourced ~/.zshrc"'
 alias redot='cd ~/.dotfiles && gpp && rake install; cd -'
 alias udsub='cd ~/.dotfiles && git submodule update --recursive --remote'
