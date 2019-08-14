@@ -129,9 +129,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/bundle/vim-mix-format"]
-	path = vim/bundle/vim-mix-format
-	url = https://github.com/mhinz/vim-mix-format
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = https://github.com/powerline/powerline
