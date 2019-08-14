@@ -132,3 +132,6 @@
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = https://github.com/powerline/powerline
+[submodule "vim/bundle/vim-mix-format"]
+	path = vim/bundle/vim-mix-format
+	url = https://github.com/mhinz/vim-mix-format.git
