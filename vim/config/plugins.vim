@@ -129,6 +129,8 @@ let g:elm_setup_keybindings = 0
 
 " ale
 
+let g:ale_fixers = {'elixir': []}
+
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 
