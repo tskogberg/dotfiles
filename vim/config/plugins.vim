@@ -134,6 +134,9 @@ let g:ale_fixers = {'elixir': []}
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 
+" air-line
+let g:airline#extensions#ale#enabled = 1
+
 " vim-mix-format
 let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
