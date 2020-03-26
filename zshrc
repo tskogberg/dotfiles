@@ -62,3 +62,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Devbox, workaround for the command cache.
 [[ -s "$HOME/.shell_local" ]] && source "$HOME/.shell_local"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
