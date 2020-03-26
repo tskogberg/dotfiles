@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/tomas/.gitignore
 	ignorecase = false
+	pager = less -R
 [color]
 	status = auto
 	diff = auto
@@ -19,6 +20,7 @@
 	subs = submodule foreach git pull origin master
 	hist = recent-branches
 	stats = shortlog -s -n
+	redate = commit --amend --date=now --no-edit
 [gist]
 	private = yes
 	extension = rb
