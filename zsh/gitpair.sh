@@ -24,4 +24,6 @@ alias pairjl='setpair  JK+LF+TS  all+jocke+lennart+tomas@barsoom.se   "Joakim Ko
 alias pairfk='setpair  FH+KP+TS  all+fabian+kim+tomas@barsoom.se   "Fabian Hoffmann, Kim Persson, and Tomas Skogberg"'
 alias pairjk='setpair  JK+KP+TS  all+jocke+kim+tomas@barsoom.se   "Joakim Kolsjö, Kim Persson, and Tomas Skogberg"'
 alias pairhk='setpair  HN+KP+TS  all+henrik+kim+tomas@barsoom.se   "Henrik Nyh, Kim Persson, and Tomas Skogberg"'
+alias pairhp='setpair  HN+PW+TS  all+henrik+peter+tomas@barsoom.se   "Henrik Nyh and Peter Wall and Tomas Skogberg"'
+alias pairho='setpair  HN+OJ+TS  all+henrik+olle+tomas@barsoom.se   "Henrik Nyh and Olle Jonsson and Tomas Skogberg"'
 alias pairmob='setpair MOB devs@auctionet.com "Mob"'
