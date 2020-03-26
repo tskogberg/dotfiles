@@ -6,12 +6,12 @@ module RubyRC
 
   # Pre-defined hash and array to experiment with.
   # http://stackoverflow.com/questions/123494/whats-your-favourite-irb-trick/123847#123847
-  HASH = { :one => 1, :two => 2, :three => 3, :four => 4, :five => 5 }
-  ARRAY = %w[one two three four five]
+  HASH = { one: 1, two: 2, three: 3, four: 4, five: 5 }
+  ARRAY = %w[ one two three four five ]
 
   # E.g.:
-  # 12:23:15 >> 
-  # DEV 12:23:15 >> 
+  # 12:23:15 >>
+  # DEV 12:23:15 >>
   PROMPT = proc { |x|
     "#{[ (rails_console? ? Rails.env.first(3).upcase : nil), Time.now.strftime("%H:%M:%S") ].compact.join(' ')} #{x} "
   } unless defined?(PROMPT)
@@ -22,7 +22,7 @@ module RubyRC
     require 'benchmark'
 
     Benchmark.bmbm do |b|
-      b.report {repetitions.times &block}
+      b.report { repetitions.times(&block) }
     end
     nil
   end
