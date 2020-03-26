@@ -18,6 +18,7 @@ alias tf='tail -F -n200'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias ssh-restart='eval "$(ssh-agent)" && ssh-add'
 
 # Portable ls with colors
 if ls --color -d . >/dev/null 2>&1; then
