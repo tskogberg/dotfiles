@@ -134,6 +134,12 @@ let g:ale_fixers = {'elixir': []}
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 
+" invoke 'bundle exec rubocop' in order for rubocop to pickup local configuration
+let g:ale_ruby_rubocop_executable = "bundle"
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+
 " air-line
 let g:airline#extensions#ale#enabled = 1
 
