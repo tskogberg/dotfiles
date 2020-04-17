@@ -18,6 +18,7 @@ alias pairh='setpair  HN+TS  devs+henrik+tomas@auctionet.com  "Henrik Nyh and To
 alias pairj='setpair  JK+TS  devs+jocke+tomas@auctionet.com   "Joakim Kolsjö and Tomas Skogberg"'
 alias pairk='setpair  KP+TS  devs+kim+tomas@auctionet.com     "Kim Persson and Tomas Skogberg"'
 alias pairp='setpair  PW+TS  devs+peter+tomas@auctionet.com  "Peter Wall and Tomas Skogberg"'
+alias pairp='setpair  OJ+TS  devs+olle+tomas@auctionet.com  "Olle Jonsson and Tomas Skogberg"'
 alias pairv='setpair  TS+VA  devs+tomas+victor@auctionet.com  "Tomas Skogberg and Victor Arias"'
 alias pairvk='setpair  TS+VK  devs+tomas+victor@auctionet.com  "Tomas Skogberg and Victor Koronen"'
 alias pairjl='setpair  JK+LF+TS  devs+jocke+lennart+tomas@auctionet.com   "Joakim Kolsjö, Lennart Fridén, and Tomas Skogberg"'
