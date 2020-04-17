@@ -22,3 +22,6 @@ doc/tags
 *.mode2v3
 *.pbxuser
 *.perspectivev3
+
+# Nfs file system sync issue files
+.nfs*
