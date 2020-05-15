@@ -147,3 +147,6 @@ loop_me() {
     sleep ${2:=1};
   done
 }
+
+# Restart ntp (sync clock)
+alias synctime="sudo service ntp stop && sudo ntpd -gq && sudo service ntp start"
