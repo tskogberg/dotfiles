@@ -68,3 +68,6 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 
 [[ $OSTYPE =~ "darwin" ]] && . $HOME/.asdf/asdf.sh
 [[ $OSTYPE =~ "darwin" ]] && . $HOME/.asdf/completions/asdf.bash
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
