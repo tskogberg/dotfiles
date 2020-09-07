@@ -102,9 +102,6 @@ alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
 
 # Work
 
-# Straight into console-in-screen.
-# Assumes there is only one screen running.
-alias prodc="ssh pa -t screen -RD"
 kop() { if [ $1 ]; then lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9; else cat << EOF
 Kills all processes on a portnumber
 
