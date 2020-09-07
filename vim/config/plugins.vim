@@ -15,6 +15,9 @@ let g:ctrlp_show_hidden = 0
 let g:ctrlp_max_files = 0
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_match_window = 'min:4,max:72'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
 " Don't let ctrlp change the working directory. Instead it now uses
 " the directory where vim was started. This fixes issues with some
