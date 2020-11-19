@@ -6,27 +6,6 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
-" Ctrl-P
-
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_max_height = 20
-let g:ctrlp_show_hidden = 0
-let g:ctrlp_max_files = 0
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_match_window = 'min:4,max:72'
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-
-" Don't let ctrlp change the working directory. Instead it now uses
-" the directory where vim was started. This fixes issues with some
-" projects that has nested git directories.
-let g:ctrlp_working_path_mode = 0
-
-" Ignores for elixir projects
-" ctrlp does not seem to respect wildignore for this?
-let g:ctrlp_custom_ignore = '\v[\/](deps|_build|node_modules|priv\/static|web\/static\/vendor\/compiled_elm/)$'
 
 " Files to skip.
 " Possibly used by other plugins, like Command-T.
