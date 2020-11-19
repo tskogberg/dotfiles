@@ -7,8 +7,9 @@ call pathogen#helptags()
 filetype plugin indent on
 
 " Fzf
+set rtp+=~/.fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'up': '40%' }
 map <C-p> :FZF<CR>
 
 " Files to skip.
