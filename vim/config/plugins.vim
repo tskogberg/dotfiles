@@ -6,6 +6,10 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
+" Fzf
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_layout = { 'down': '40%' }
+map <C-p> :FZF<CR>
 
 " Files to skip.
 " Possibly used by other plugins, like Command-T.
