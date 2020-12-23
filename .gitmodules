@@ -123,9 +123,6 @@
 [submodule "vim/bundle/elm-vim"]
 	path = vim/bundle/elm-vim
 	url = https://github.com/ElmCast/elm-vim
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "vim/bundle/vim-mix-format"]
 	path = vim/bundle/vim-mix-format
 	url = https://github.com/mhinz/vim-mix-format.git
