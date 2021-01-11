@@ -10,7 +10,7 @@ filetype plugin indent on
 set rtp+=~/.fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'up': '40%' }
-map <C-p> :FZF<CR>
+map <silent> <C-p> :FZF<CR>
 
 " Files to skip.
 " Possibly used by other plugins, like Command-T.
