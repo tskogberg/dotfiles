@@ -1,0 +1,47 @@
+{
+  "diagnostic-languageserver.filetypes": {
+    "eelixir": [
+      "mix_credo",
+      "mix_credo_compile"
+    ],
+    "elixir": [
+      "mix_credo",
+      "mix_credo_compile"
+    ],
+    "sh": "shellcheck",
+    "markdown": [
+      "write-good",
+      "markdownlint"
+    ]
+  },
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": [
+        "elm"
+      ],
+      "rootPatterns": [
+        "elm.json"
+      ],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
+    }
+  },
+  "codeLens.enable": true,
+  "solargraph.useBundler": true,
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": false,
+  "solargraph.formatting": false,
+  "solargraph.hover": true,
+  "diagnostic.errorSign": "😱",
+  "diagnostic.warningSign": "😓",
+  "diagnostic.infoSign": "💁",
+  "diagnostic.hintSign": "📎",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "ruby",
+    "elixir",
+    "javascript",
+    "json"
+  ]
+}
