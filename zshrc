@@ -69,7 +69,6 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 [[ $OSTYPE =~ "darwin" ]] && . $HOME/.asdf/asdf.sh
-[[ $OSTYPE =~ "darwin" ]] && . $HOME/.asdf/completions/asdf.bash
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
