@@ -76,5 +76,5 @@ end
 
 desc "Update git submodules."
 task :update_subs do
-  system("git submodule foreach git pull origin master")
+  system("git pull --recurse-submodules --jobs=10")
 end
