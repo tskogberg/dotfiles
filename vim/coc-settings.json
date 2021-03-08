@@ -29,7 +29,6 @@
     }
   },
   "codeLens.enable": true,
-  "solargraph.useBundler": true,
   "solargraph.diagnostics": true,
   "solargraph.autoformat": false,
   "solargraph.formatting": false,
