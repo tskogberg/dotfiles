@@ -150,3 +150,7 @@ alias synctime="sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
 
 # Try out nvim
 alias vim="nvim"
+
+alias dstart="c barsoom/devbox-18.04 && v up && v ssh"
+alias dstop="c barsoom/devbox-18.04 && v suspend"
+
