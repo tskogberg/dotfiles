@@ -148,5 +148,5 @@ loop_me() {
 # Restart ntp (sync clock)
 alias synctime="sudo service ntp stop && sudo ntpd -gq && sudo service ntp start"
 
-# Try our nvim
+# Try out nvim
 alias vim="nvim"
