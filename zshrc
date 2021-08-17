@@ -72,3 +72,5 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Devbox
+export DEV_HOST="devbox.local"
