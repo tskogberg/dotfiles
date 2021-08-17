@@ -5,6 +5,7 @@
 	excludesfile = /Users/tomas/.gitignore
 	ignorecase = false
 	pager = less -R
+	editor = /devbox/tmp/devbox/binwrappers/nvim
 [color]
 	status = auto
 	diff = auto
