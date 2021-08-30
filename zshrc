@@ -42,9 +42,6 @@ done
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
-# Add RVM to PATH for scripting
-export PATH=$HOME/.rvm/bin:$PATH
-
 # Load bs env
 [[ -s "$HOME/.bs/profile" ]] && source "$HOME/.bs/profile"
 
