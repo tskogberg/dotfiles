@@ -92,7 +92,20 @@ alias hlog="heroku logs -t"
 # tmux
 tn() { if [ $1 ]; then tmux new -s $1; else tmux new -s $(basename $PWD | tr . _); fi }
 ta() { if [ $1 ]; then tmux attach -t $1; else tmux attach; fi }
+tna() {
+  tmux start-server
+
+  cd /projects
+  for project in $(ls); do
+    cd $project
+    tmux new-session -d -s $project
+    cd ..
+  done
+
+  ta
+}
 alias tl="tmux ls"
+alias tka="tmux list-sessions | grep -v attached | cut -f 1 -d ':' | xargs -n 1 tmux kill-session -t || echo No sessions to kill"
 # With tmux mouse mode on, just select text in a pane to copy.
 # Then run tcopy to put it in the OS X clipboard (assuming reattach-to-user-namespace).
 alias tcopy="tmux show-buffer | pbcopy"
