@@ -29,15 +29,21 @@
       }
     }
   },
+  "tsserver.enable": false,
+  "eslint.enable": false,
+
   "codeLens.enable": true,
+
   "solargraph.diagnostics": true,
   "solargraph.autoformat": false,
-  "solargraph.formatting": false,
+  "solargraph.formatting": true,
   "solargraph.hover": true,
+
   "diagnostic.errorSign": "😱",
   "diagnostic.warningSign": "😓",
   "diagnostic.infoSign": "💁",
   "diagnostic.hintSign": "📎",
+
   "coc.preferences.formatOnSaveFiletypes": [
     "ruby",
     "elixir",
