@@ -12,7 +12,8 @@
     "markdown": [
       "write-good",
       "markdownlint"
-    ]
+    ],
+    "slim": "slim-lint"
   },
   "languageserver": {
     "elmLS": {
@@ -41,6 +42,7 @@
     "ruby",
     "elixir",
     "javascript",
-    "json"
+    "json",
+    "slim"
   ]
 }
