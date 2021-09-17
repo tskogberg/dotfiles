@@ -60,7 +60,3 @@ au BufLeave,FocusLost * silent! wa
 
 set exrc   " Enable per-directory .vimrc files.
 set secure " Disable unsafe commands in per-directory .vimrc files.
-
-if has('nvim')
-  "let g:ruby_host_prog = '/opt/devbox/ruby/bin/neovim-ruby-host'
-endif

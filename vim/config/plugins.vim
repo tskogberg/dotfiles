@@ -122,7 +122,19 @@ let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
 
 " coc.nvim
-let g:coc_global_extensions = ['coc-solargraph']
+
+" Ruby: https://github.com/neoclide/coc-solargraph
+" ESLint: https://github.com/neoclide/coc-eslint
+" TypeScript: https://github.com/neoclide/coc-tsserver
+let g:coc_global_extensions = ['coc-solargraph', 'coc-eslint', 'coc-tsserver']
+
+" Fix buggy behaviour where cursor disappears: https://github.com/neoclide/coc.nvim/issues/1775#issuecomment-757764053
+let g:coc_disable_transparent_cursor = 1
+
+" In Devbox, use the global node, since per-project nodes may be too old for coc.nvim.
+if exists('$DEVBOX')
+  let g:coc_node_path = '/devbox/tmp/devbox/binwrappers/node'
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -139,7 +151,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <leader>space coc#refresh()
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -165,8 +177,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
