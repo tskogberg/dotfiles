@@ -35,7 +35,7 @@
   "codeLens.enable": true,
 
   "solargraph.diagnostics": true,
-  "solargraph.autoformat": false,
+  "solargraph.autoformat": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
 
@@ -45,10 +45,10 @@
   "diagnostic.hintSign": "📎",
 
   "coc.preferences.formatOnSaveFiletypes": [
-    "ruby",
     "elixir",
     "javascript",
     "json",
-    "slim"
+    "slim",
+    "ruby"
   ]
 }
