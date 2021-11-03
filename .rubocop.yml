@@ -1,0 +1,2 @@
+inherit_from:
+  - https://raw.githubusercontent.com/barsoom/barsoom_utils/master/shared_rubocop.yml
