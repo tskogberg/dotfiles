@@ -1,3 +1,5 @@
+main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
 # Management
 alias dots="cd ~/.dotfiles && vim ."
 alias reload='source ~/.zshrc && echo "sourced ~/.zshrc"'
@@ -70,7 +72,7 @@ alias gps='(git stash --include-untracked | grep -v "No local changes to save") 
 alias go="git checkout"
 alias gb="git checkout -b"
 alias got="git checkout -"
-alias gom="git checkout master"
+alias gom="git checkout \$main_branch"
 alias gr="git branch -d"
 alias grr="git branch -D"
 alias gcp="git cherry-pick"
@@ -78,7 +80,7 @@ alias gam="git commit --amend"
 alias gamm="git add --all && git commit --amend -C HEAD"
 alias gba="git rebase --abort"
 alias gbc="git add -A && git rebase --continue"
-alias gbm="git fetch origin master && git rebase origin/master"
+alias gbm="git fetch origin \$main_branch && git rebase origin/\$main_branch"
 
 # Heroku
 alias h="heroku"
