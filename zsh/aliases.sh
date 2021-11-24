@@ -1,4 +1,4 @@
-main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+[[ -d ".git" ]] && main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 
 # Management
 alias dots="cd ~/.dotfiles && vim ."
