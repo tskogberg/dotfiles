@@ -1,0 +1,21 @@
+#!/bin/bash
+
+hook=$(basename "$0")
+if [ -e "./.git/hooks/$hook" ]; then
+  "./.git/hooks/$hook" "$@"
+else
+  commit_file=$1
+  commit_source=$2
+  _sha1=$3
+
+  co_author_blob=$(git config user.co-authors)
+
+  if [[ -n "$co_author_blob" ]]; then
+    if ! grep -q "Co-authored-by:" "$commit_file"; then
+      git interpret-trailers --in-place --trailer "$co_author_blob" "$commit_file"
+      if test -z "$commit_source"; then
+        sed -i '1s/^/\n/' "$commit_file"
+      fi
+    fi
+  fi
+fi

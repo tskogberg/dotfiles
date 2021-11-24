@@ -6,6 +6,7 @@
 	ignorecase = false
 	pager = less -R
 	editor = /devbox/tmp/devbox/binwrappers/nvim
+	hooksPath = /home/tomas/.githooks
 [color]
 	status = auto
 	diff = auto

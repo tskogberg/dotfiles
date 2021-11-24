@@ -1,0 +1,6 @@
+#!/bin/bash
+
+hook=$(basename "$0")
+if [ -e "./.git/hooks/$hook" ]; then
+  "./.git/hooks/$hook" "$@"
+fi
