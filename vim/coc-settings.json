@@ -23,25 +23,26 @@
         "-"
       ]
     },
-     "slim-lint": {
-    "command": "bundle",
-    "sourceName": "slim-lint",
-    "debounce": 100,
-    "args": [
-      "exec",
-      "slim-lint",
-      "--reporter", "json",
-      "--stdin-file-path", "%filepath"
-    ],
-    "parseJson": {
-      "errorsRoot": "files[0].offenses",
-      "line": "location.line",
-      "message": "${message}",
-      "security": "severity"
-    },
-    "securities": {
-      "error": "error",
-      "warning": "warning"
+    "slim-lint": {
+      "command": "bundle",
+      "sourceName": "slim-lint",
+      "debounce": 100,
+      "args": [
+        "exec",
+        "slim-lint",
+        "--reporter", "json",
+        "--stdin-file-path", "%filepath"
+      ],
+      "parseJson": {
+        "errorsRoot": "files[0].offenses",
+        "line": "location.line",
+        "message": "${message}",
+        "security": "severity"
+      },
+      "securities": {
+        "error": "error",
+        "warning": "warning"
+      }
     }
   },
   "languageserver": {
