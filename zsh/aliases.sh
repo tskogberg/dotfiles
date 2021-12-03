@@ -82,6 +82,9 @@ alias gba="git rebase --abort"
 alias gbc="git add -A && git rebase --continue"
 alias gbm="git fetch origin \$main_branch && git rebase origin/\$main_branch"
 
+# Grep
+alias grep="grep --color=auto"
+
 # Heroku
 alias h="heroku"
 alias hp="git push heroku"
