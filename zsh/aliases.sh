@@ -94,6 +94,9 @@ alias hc="heroku run console"
 alias hsc="heroku run console -r production"  # Make Henrik happy
 alias hlog="heroku logs -t"
 
+# Rubygems
+alias yubikey-rubygems="ykman oath code -s rubygems"
+
 # tmux
 tn() { if [ $1 ]; then tmux new -s $1; else tmux new -s $(basename $PWD | tr . _); fi }
 ta() { if [ $1 ]; then tmux attach -t $1; else tmux attach; fi }
