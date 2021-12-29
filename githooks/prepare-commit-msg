@@ -11,11 +11,10 @@ else
   co_author_blob=$(git config user.co-authors)
 
   if [[ -n "$co_author_blob" ]]; then
-    if ! grep -q "Co-authored-by:" "$commit_file"; then
-      git interpret-trailers --in-place --trailer "$co_author_blob" "$commit_file"
-      if test -z "$commit_source"; then
-        sed -i '1s/^/\n/' "$commit_file"
-      fi
+    git interpret-trailers --in-place --if-exists doNothing --where end --trailer "$co_author_blob" "$commit_file"
+
+    if test -z "$commit_source"; then
+      sed -i '1s/^/\n/' "$commit_file"
     fi
   fi
 fi

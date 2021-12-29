@@ -61,9 +61,9 @@ alias gd="git diff-index HEAD -p --color | less"  # What's changed? Both staged 
 alias gdo="git diff --cached"  # What's changed? Only staged (added) changes.
 # for gco ("git commit only") and gca ("git commit all"), see functions.sh.
 alias gcaf="git add --all && git commit --no-verify -m"
-alias gcac="gca Cleanup"
-alias gcoc="gco Cleanup"
-alias gcab="gca Blankspace"
+alias gcac='gca "style: Cleanup"'
+alias gcoc='gco "style: Cleanup"'
+alias gcab='gca "style: Blankspace"'
 alias emptycommit="git commit -m 'Empty commit' --allow-empty"
 alias gp="git push"
 alias gpp='git pull --rebase && git push'
@@ -97,21 +97,6 @@ alias hlog="heroku logs -t"
 # Rubygems
 alias yubikey="ykman oath code -s"
 
-# tmux
-tn() { if [ $1 ]; then tmux new -s $1; else tmux new -s $(basename $PWD | tr . _); fi }
-ta() { if [ $1 ]; then tmux attach -t $1; else tmux attach; fi }
-tna() {
-  tmux start-server
-
-  cd /projects
-  for project in $(ls); do
-    cd $project
-    tmux new-session -d -s $project
-    cd ..
-  done
-
-  ta
-}
 alias tl="tmux ls"
 alias tka="tmux list-sessions | grep -v attached | cut -f 1 -d ':' | xargs -n 1 tmux kill-session -t || echo No sessions to kill"
 # With tmux mouse mode on, just select text in a pane to copy.
@@ -121,51 +106,10 @@ alias tcopy="tmux show-buffer | pbcopy"
 # Servers
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
 
-# Work
-
-kop() {
-  if [ "$1" ]; then
-    lsof -n -i:"$1" | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9;
-  else
-    printf "Kills all processes on a portnumber\n\nUsage: kop [port_number]\n";
-  fi
-}
-
-udgems() {
-  git pull
-  dev
-  bundle update
-  git status | grep "not staged" &>/dev/null
-  if [ $? -eq 0 ]; then
-    if [ -d spec ]; then
-      bundle exec rake || return
-      bundle exec rake spec || return
-    fi
-
-    git commit -a -m "Update gems"
-    git show
-    echo "Amend to the commit message if there in any big changes and dont forget to run dev bundle!"
-  else
-    echo "Nothing to update!"
-  fi
-
-  if [ $1 ]; then
-    echo "Outdated:" `bundle outdated|grep '* '|wc -l`
-  fi
-
-  dev stop
-}
-
 alias mobstation="ps ax|grep ssh|grep 9933|grep localhost|awk '{ print \$1 }'|xargs kill; ssh mob -L 9933:localhost:5900 -nNT 2> /dev/null & open vnc://localhost:9933"
 
 # Other
 alias v="vagrant"
-loop_me() {
-  while true; do
-    eval $1;
-    sleep ${2:=1};
-  done
-}
 
 # Restart ntp (sync clock)
 alias synctime="sudo service ntp stop && sudo ntpd -gq && sudo service ntp start"
@@ -175,4 +119,3 @@ alias vim="nvim"
 
 alias dstart="c barsoom/devbox-18.04 && v up && v ssh"
 alias dstop="c barsoom/devbox-18.04 && v suspend"
-

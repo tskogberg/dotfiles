@@ -4,7 +4,7 @@
 # "o" = open pwd in Finder.
 
 function o {
-  open ${@:-'.'}
+  open "${@:-'.'}"
 }
 
 
@@ -15,7 +15,11 @@ function o {
 
 unalias gco 2>/dev/null  # ohmyzsh might define it
 function gco {
-  [ -z $1 ] && git commit -v || git commit -m $1
+  if [ -z "$1" ]; then
+    git commit -v
+  else
+    git commit -m "$1"
+  fi
 }
 
 
@@ -26,7 +30,7 @@ function gco {
 
 unalias gca 2>/dev/null  # ohmyzsh might define it
 function gca {
-  git add --all && gco $1
+  git add --all && gco "$1"
 }
 
 
@@ -46,7 +50,7 @@ function cdgem {
 #     /Users/henrik/.dotfiles/ackrc
 
 function pwf {
-  echo $PWD/$1
+  echo "$PWD/$1"
 }
 
 
@@ -56,7 +60,7 @@ function pwf {
 #     henrik@Nyx /tmp/foo/bar/baz$
 
 function mcd {
-  mkdir -p $1 && cd $1
+  mkdir -p "$1" && cd "$1"
 }
 
 
@@ -79,4 +83,52 @@ function sshkey {
 
 function xc {
   open `ls | grep .xcodeproj`
+}
+
+# tmux
+
+tn() {
+  if [[ "$1" ]]; then
+    tmux new -s "$1";
+  else
+    tmux new -s "$(basename "$PWD" | tr . _)";
+  fi
+}
+
+ta() {
+  if [[ "$1" ]]; then
+    tmux attach -t "$1";
+  else
+    tmux attach;
+  fi
+}
+
+tna() {
+  tmux start-server
+
+  cd /projects || exit
+  for project in */; do
+    cd "$project" || exit
+    tmux new-session -d -s "$project"
+    cd ..
+  done
+
+  ta
+}
+
+# Others
+
+kop() {
+  if [ "$1" ]; then
+    lsof -n -i:"$1" | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9;
+  else
+    printf "Kills all processes on a portnumber\n\nUsage: kop [port_number]\n";
+  fi
+}
+
+loop_me() {
+  while true; do
+    eval "$1";
+    sleep "${2:=1}";
+  done
 }
