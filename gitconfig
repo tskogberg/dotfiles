@@ -44,3 +44,5 @@
 	user = tskogberg
 [credential]
 	helper = cache
+[status]
+	submoduleSummary = true
