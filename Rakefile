@@ -76,5 +76,5 @@ end
 
 desc "Update git submodules."
 task :update_subs do
-  system("git pull --recurse-submodules --jobs=10")
+  system("git submodule update --remote")
 end
