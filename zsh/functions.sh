@@ -99,7 +99,7 @@ ta() {
   if [[ "$1" ]]; then
     tmux attach -t "$1";
   else
-    tmux attach;
+    tmux attach -t "$(basename "$PWD" | tr . _)";
   fi
 }
 
