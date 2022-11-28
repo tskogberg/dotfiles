@@ -61,10 +61,10 @@ alias gd="git diff-index HEAD -p --color | less"  # What's changed? Both staged 
 alias gdo="git diff --cached"  # What's changed? Only staged (added) changes.
 # for gco ("git commit only") and gca ("git commit all"), see functions.sh.
 alias gcaf="git add --all && git commit --no-verify -m"
-alias gcac='gca "style: Cleanup"'
-alias gcoc='gco "style: Cleanup"'
-alias gcab='gca "style: Blankspace"'
-alias emptycommit="git commit -m 'Empty commit' --allow-empty"
+alias gcac='gca "style: cleanup"'
+alias gcoc='gco "style: cleanup"'
+alias gcab='gca "style: blankspace"'
+alias emptycommit="git commit -m 'chore: empty commit (trigger ci)' --allow-empty"
 alias gp="git push"
 alias gpp='git pull --rebase && git push'
 alias gppp="git push -u"  # Can't pull because you forgot to track? Run this.
