@@ -60,3 +60,6 @@ au BufLeave,FocusLost * silent! wa
 
 set exrc   " Enable per-directory .vimrc files.
 set secure " Disable unsafe commands in per-directory .vimrc files.
+
+" Autoformat XML
+au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
