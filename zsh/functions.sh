@@ -96,10 +96,15 @@ tn() {
 }
 
 ta() {
+  currentTmuxSessions=$(tl | cut -d: -f1);
+  currentBasename="$(basename "$PWD" | tr . _)";
+
   if [[ "$1" ]]; then
     tmux attach -t "$1";
+  elif (($currentTmuxSessions[(Ie)$currentBasename])); then
+    tmux attach -t $currentBasename;
   else
-    tmux attach -t "$(basename "$PWD" | tr . _)";
+    tmux attach
   fi
 }
 
