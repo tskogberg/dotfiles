@@ -1,11 +1,3 @@
-" Pathogen.vim
-
-" Must turn filetype off and then back on.
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
-
 " Fzf
 set rtp+=~/.fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'

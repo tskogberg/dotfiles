@@ -5,6 +5,7 @@ DO_NOT_SYMLINK = %w[
   extras
   Rakefile
   README.markdown
+  vim
 ]
 
 
@@ -38,7 +39,7 @@ def install_oh_my_zsh
   end
 end
 
-task :default => :install
+task default: :install
 
 desc "Install dotfiles."
 task :install do
@@ -72,6 +73,7 @@ task :install do
 
   system "git submodule update --init"
   system "cp -R ~/.dotfiles/oh-my-zsh-custom/* ~/.oh-my-zsh/"
+  system "cp -R ~/.dotfiles/nvim/* ~/.config/"
 end
 
 desc "Update git submodules."
