@@ -22,6 +22,8 @@ set wrap                              " Soft wrap.
 set expandtab                         " Replace tabs with spaces.
 set shiftwidth=2                      " Spaces used for autoindent and commands like >>.
 set softtabstop=2                     " Spaces inserted by <Tab>.
+filetype indent on
+set smartindent
 
 " Searching.
 set gdefault                          " Global search by default (/g turns it off).
