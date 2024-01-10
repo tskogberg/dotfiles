@@ -32,7 +32,7 @@ return {
       pickers = {
         find_files = {
           previewer = true,
-          find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' }
+          find_command = { "fd", "--type", "file", "--hidden", "--strip-cwd-prefix" },
         },
         git_files = {
           previewer = true,

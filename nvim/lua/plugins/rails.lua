@@ -2,9 +2,6 @@ return {
   {
     'tpope/vim-rails',
     ft = { 'ruby', 'slim' },
-    dependencies = {
-      'tpope/vim-projectionist',
-    }
   },
   {
     "slim-template/vim-slim",
@@ -22,4 +19,7 @@ return {
     'tpope/vim-bundler',
     ft = 'ruby',
   },
+  {
+    'tpope/vim-projectionist',
+  }
 }
