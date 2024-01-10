@@ -103,3 +103,6 @@ nmap <leader>tc :tabclose<CR>
 
 " Remove trailing whitespace
 nmap <leader>ws :%s/\s\+$//<CR>
+
+" format XML
+nmap <leader>xf :%!xmllint --format -<CR>
