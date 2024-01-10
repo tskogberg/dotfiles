@@ -71,3 +71,23 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # Devbox
 export DEV_HOST="devbox.local"
+
+# Starship
+eval "$(starship init zsh)"
+
+# shadowenv
+source /devbox/script/support/profile
+
+# reuse ssh-agent and keys
+ssh-add -l &>/dev/null
+if [ "$?" = 2 ]; then
+  test -r ~/.ssh-agent && \
+    eval "$(<~/.ssh-agent)" >/dev/null
+
+  ssh-add -l &>/dev/null
+  if [ "$?" = 2 ]; then
+    (umask 066; ssh-agent > ~/.ssh-agent)
+    eval "$(<~/.ssh-agent)" >/dev/null
+    ssh-add
+  fi
+fi
