@@ -72,5 +72,9 @@ map('n', '<leader>fb', '<Cmd>Telescope buffers<CR>', {})
 map('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>', {})
 
 -- nvim-test
-map('n', '<leader>m', ':TestNearest<CR>')
-map('n', '<leader>M', ':TestFile<CR>')
+map('n', 'm', ':TestNearest<CR>')
+map('n', 'M', ':TestFile<CR>')
+
+-- GitGrep for <cword>
+map('n', '<leader>s', '* :GitGrep <cword><CR>')
+map('n', '<leader>a', ':GitGrep<space>')
