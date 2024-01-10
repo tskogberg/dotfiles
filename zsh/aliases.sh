@@ -103,14 +103,6 @@ alias tka="tmux list-sessions | grep -v attached | cut -f 1 -d ':' | xargs -n 1 
 # Then run tcopy to put it in the OS X clipboard (assuming reattach-to-user-namespace).
 alias tcopy="tmux show-buffer | pbcopy"
 
-# Servers
-alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Pow
-
-alias mobstation="ps ax|grep ssh|grep 9933|grep localhost|awk '{ print \$1 }'|xargs kill; ssh mob -L 9933:localhost:5900 -nNT 2> /dev/null & open vnc://localhost:9933"
-
-# Other
-alias v="vagrant"
-
 # Restart ntp (sync clock)
 alias synctime="sudo service ntp stop && sudo ntpd -gq && sudo service ntp start"
 
