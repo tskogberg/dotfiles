@@ -23,7 +23,6 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-  elixirls = {},
   elmls = {},
   tailwindcss = {},
 }
@@ -55,10 +54,18 @@ local manually_installed_servers = {
       }
     }
   },
+  elixirls = {
+    cmd = { "/home/tomas/.elixir-ls/release/language_server.sh" },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+      elixirLS = {
+        dialyzerEnabled = true,
+        fetchDeps = false,
+      },
+    },
+  },
 }
-
-
-
 
 return {
   {
