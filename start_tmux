@@ -1,55 +1,68 @@
 #!/bin/zsh
 
+tmux new-session -d -s 'dotfiles'
+tmux send-keys -t 'dotfiles:1' 'cd ~/.dotfiles' C-m
+
+#expect 'Enter passphrase for /home/tomas/.ssh/id_ed25519:'
+#/usr/bin/expect - <<EOD
+#  read -s PWD
+#  send '$1\n'
+#  echo $PWD
+#EOD
+#tmux send-keys -t 'dotfiles:1' 'gl' C-m
+
 projects=(
-  "auctionet"
-  "porter"
-  "logan"
-  "neopris"
-  "ex-remit"
-  "skipper"
+  'auctionet'
+  'porter'
+  'logan'
+  'neopris'
+  'ex-remit'
+  'skipper'
 )
 
 for project in $projects; do
   tmux new-session -d -s $project
-  tmux send-keys -t "$project:1" "cd /projects/$project" C-m
-  tmux send-keys -t "$project:1" "gl" C-m
-  tmux new-window -t "$project:9" -n "webserver"
-  tmux send-keys -t "$project:9" "cd /projects/$project" C-m
+  tmux send-keys -t '$project:1' "cd /projects/$project" C-m
+  tmux send-keys -t '$project:1' 'gl' C-m
+  tmux new-window -t '$project:9' -n 'webserver'
+  tmux send-keys -t '$project:9' "cd /projects/$project" C-m
 done
 
 # Project specific commands
 
 # core
-tmux send-keys -t "auctionet:1" "gl" C-m
-tmux send-keys -t "auctionet:1" "dev" C-m
-tmux send-keys -t "auctionet:1" "rake app:reset" C-m
-tmux send-keys -t "auctionet:9" "dev web"
-tmux select-window -t "auctionet:1"
+#tmux send-keys -t 'auctionet:1' 'dev; tmux wait-for -S dev-done' C-m
+#tmux wait-for dev-done
+tmux send-keys -t 'auctionet:1' 'dev' C-m
+tmux send-keys -t 'auctionet:1' 'rake app:reset' C-m
+tmux send-keys -t 'auctionet:9' 'dev web'
+tmux select-window -t 'auctionet:1'
 
 # porter
-tmux send-keys -t "porter:1" "dev update" C-m
-tmux send-keys -t "porter:9" "dev web"
-tmux select-window -t "porter:1"
+tmux send-keys -t 'porter:1' 'dev update' C-m
+tmux send-keys -t 'porter:9' 'dev web'
+tmux select-window -t 'porter:1'
 
 # logan
-tmux send-keys -t "logan:1" "dev update" C-m
-tmux send-keys -t "logan:9" "dev web"
-tmux select-window -t "logan:1"
+tmux send-keys -t 'logan:1' 'dev update' C-m
+tmux send-keys -t 'logan:9' 'dev web'
+tmux select-window -t 'logan:1'
 
 # neopris
-tmux send-keys -t "neopris:1" "dev update" C-m
-tmux send-keys -t "neopris:9" "dev web"
-tmux select-window -t "neopris:1"
+tmux send-keys -t 'neopris:1' 'dev update' C-m
+tmux send-keys -t 'neopris:9' 'dev web'
+tmux select-window -t 'neopris:1'
 
 # ex-remit
-tmux send-keys -t "ex-remit:1" "dev update" C-m
-tmux send-keys -t "ex-remit:9" "dev web"
-tmux select-window -t "ex-remit:1"
+# tmux send-keys -t 'ex-remit:1' 'dev update' C-m
+tmux send-keys -t 'ex-remit:1' 'dev update' C-m
+tmux send-keys -t 'ex-remit:9' 'dev web'
+tmux select-window -t 'ex-remit:1'
 
 # skipper
-tmux send-keys -t "skipper:1" "make sh" C-m
-tmux send-keys -t "skipper:9" "make dev"
-tmux select-window -t "skipper:1"
+tmux send-keys -t 'skipper:1' 'make sh' C-m
+tmux send-keys -t 'skipper:9' 'make dev'
+tmux select-window -t 'skipper:1'
 
 # Attach to core
 tmux attach-session -t ${projects[@]:0:1}

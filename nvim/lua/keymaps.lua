@@ -3,7 +3,7 @@
 -----------------------------------------------------------
 
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap=true, silent=true }
+  local options = { noremap = true, silent = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end
@@ -57,13 +57,13 @@ map('n', '<leader><leader>', ':noh<CR>')
 -----------------------------------------------------------
 
 -- Terminal mappings
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
-map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
+map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
+map('t', '<Esc>', '<C-\\><C-n>')                   -- exit
 
 -- NvimTree
-map('n', '<leader>n', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<C-n>', ':NvimTreeFindFile<CR>')      -- search file
+map('n', '<leader>n', ':NvimTreeToggle<CR>')  -- open/close
+map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
+map('n', '<C-n>', ':NvimTreeFindFile<CR>')    -- search file
 
 -- Telescope
 map('n', '<C-p>', '<Cmd>Telescope find_files<CR>', {})

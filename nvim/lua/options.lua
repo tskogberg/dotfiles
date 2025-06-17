@@ -53,11 +53,11 @@ opt.listchars = {
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
-opt.hidden = true     -- Enable background buffers
-opt.history = 100     -- Remember N lines in history
-opt.lazyredraw = true -- Faster scrolling
-opt.synmaxcol = 280   -- Max column for syntax highlight
-opt.updatetime = 700  -- ms to wait for trigger an event
+opt.hidden = true      -- Enable background buffers
+opt.history = 100      -- Remember N lines in history
+opt.lazyredraw = false -- Enable for faster scrolling
+opt.synmaxcol = 280    -- Max column for syntax highlight
+opt.updatetime = 700   -- ms to wait for trigger an event
 
 -----------------------------------------------------------
 -- Startup
