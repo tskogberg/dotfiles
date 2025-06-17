@@ -8,7 +8,3 @@ export TERM='xterm-kitty'
 export GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-export LANG=en_GB.UTF-8
-export LC_ALL=$LANG
-export LC_CTYPE=$LANG
