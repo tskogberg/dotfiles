@@ -75,16 +75,18 @@ function sshkey {
   echo "sshkey done."
 }
 
-# Open the .xcodeproj file from the working directory (typically in Xcode).
-# These are equivalent:
-#
-#     henrik@Nyx ~/MyApp$ open MyApp.xcodeproj
-#     henrik@Nyx ~/MyApp$ xc
-
-function xc {
-  open `ls | grep .xcodeproj`
+# Connect to a kubernetes pod and attach to the Erlang node
+ksh ()
+{
+    app=$1;
+    pod=$(kubectl get pods -l app=$app -o=jsonpath='{.items[0].metadata.name}' 2>/dev/null);
+    result=$?;
+    if [ $result -ne 0 ]; then
+        echo "could not get pods for $app";
+        return $result;
+    fi;
+    kubectl exec -it $pod -- sh
 }
-
 # tmux
 
 tn() {
