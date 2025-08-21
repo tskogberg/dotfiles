@@ -67,7 +67,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 export ASDF_DATA_DIR="/home/tomas/.asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
-[[ $OSTYPE =~ "darwin" ]] && . $HOME/.asdf/asdf.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
