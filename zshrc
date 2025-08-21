@@ -81,14 +81,13 @@ source /devbox/script/support/profile
 
 # reuse ssh-agent and keys
 ssh-add -l &>/dev/null
-if [ "$?" = 2 ]; then
-  test -r ~/.ssh-agent && \
-    eval "$(<~/.ssh-agent)" >/dev/null
-
-  ssh-add -l &>/dev/null
-  if [ "$?" = 2 ]; then
-    (umask 066; ssh-agent > ~/.ssh-agent)
-    eval "$(<~/.ssh-agent)" >/dev/null
-    ssh-add
+if command -v keychain >/dev/null 2>&1; then
+  # Keychain is installed, proceed with the eval command
+  eval `keychain --eval --agents ssh id_ed25519`
+else
+  # Keychain is not installed, fall back to a manual ssh-agent setup
+  if ! pgrep -f "ssh-agent" > /dev/null; then
+    eval "$(ssh-agent -s)" > /dev/null
   fi
+  ssh-add -l > /dev/null || ssh-add
 fi
