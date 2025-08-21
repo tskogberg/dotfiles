@@ -16,15 +16,14 @@ end
 
 -- Servers you want mason to keep installed
 local servers = {
-  bashls = {},
-  cssls = {},
+  --bashls = {},
+  --cssls = {},
   emmet_ls = {},
-  html = {},
-  pyright = {},
-  rust_analyzer = {},
-  tsserver = {},
+  --html = {},
+  --tsserver = {},
   elmls = {},
   tailwindcss = {},
+  elixirls = {},
 }
 
 -- Servers you'll handle yourself. Could still be through mason, or through env management. Up to you.
@@ -32,14 +31,13 @@ local manually_installed_servers = {
   solargraph = {
     settings = {
       solargraph = {
-        diagnostics = false
+        diagnostics = true
       }
     },
     init_options = {
       formatting = true
     }
   },
-  gopls = {},
   lua_ls = {
     settings = {
       Lua = {
@@ -61,7 +59,33 @@ local manually_installed_servers = {
     settings = {
       elixirLS = {
         dialyzerEnabled = true,
-        fetchDeps = false,
+        fetchDeps = true,
+      },
+    },
+  },
+  diagnosticls = {
+    init_options = {
+      linters = {
+        slimlint = {
+          command = "slim-lint",
+          rootPatterns = { ".git/" },
+          debounce = 100,
+          args = { "--reporter", "json", "--stdin-file-path", "%filepath" },
+          sourceName = "slim-lint",
+          parseJson = {
+            errorsRoot = "files[0].offenses",
+            line = "location.line",
+            message = "${message}",
+            security = "severity",
+          },
+          securities = {
+            error = "error",
+            warning = "warning",
+          },
+        },
+      },
+      filetypes = {
+        slim = "slimlint",
       },
     },
   },
@@ -121,16 +145,7 @@ return {
 
         -- Enable completion triggered by <c-x><c-o>
         buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        require('which-key').register(require('plugins.which-key.lsp-binds'), { buffer = bufnr })
       end
-
-      mason_lspconfig.setup_handlers {
-        function(server_name)
-          lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach },
-            servers[server_name] or {}))
-        end
-      }
 
       for server_name, config in pairs(manually_installed_servers) do
         lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach }, config or {}))

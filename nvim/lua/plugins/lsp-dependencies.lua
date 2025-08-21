@@ -25,7 +25,7 @@ return {
   },
   { 'folke/neodev.nvim', config = true },
   {
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     config = function()
       local null_ls = require('null-ls')
       null_ls.setup({
@@ -39,7 +39,7 @@ return {
     'jay-babu/mason-null-ls.nvim',
     dependencies = {
       'williamboman/mason.nvim',
-      'jose-elias-alvarez/null-ls.nvim',
+      'nvimtools/none-ls.nvim',
     },
     opts = {
       automatic_installation = false,

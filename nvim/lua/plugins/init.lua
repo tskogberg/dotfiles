@@ -5,10 +5,6 @@ return {
     event = "BufWinEnter",
   },
   {
-    'henrik/git-grep-vim',
-    event = "BufWinEnter",
-  },
-  {
     'tpope/vim-eunuch',
     event = "BufWinEnter",
   },

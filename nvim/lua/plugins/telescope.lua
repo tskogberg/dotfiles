@@ -24,10 +24,6 @@ return {
         },
         prompt_prefix = "  ",
         selection_caret = "  ",
-        mappings = {
-          i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
-          n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
-        },
       },
       pickers = {
         find_files = {

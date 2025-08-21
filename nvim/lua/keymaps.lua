@@ -31,7 +31,6 @@ map('n', '<leader>c', ':nohl<CR>')
 
 -- Toggle auto-indenting for code paste
 map('n', '<F2>', ':set invpaste paste?<CR>')
-vim.opt.pastetoggle = '<F2>'
 
 -- Change split orientation
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
@@ -71,10 +70,6 @@ map('n', '<leader>fg', '<Cmd>Telescope live_grep<CR>', {})
 map('n', '<leader>fb', '<Cmd>Telescope buffers<CR>', {})
 map('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>', {})
 
--- nvim-test
-map('n', 'm', ':TestNearest<CR>')
-map('n', 'M', ':TestFile<CR>')
-
 -- GitGrep for <cword>
-map('n', '<leader>s', '* :GitGrep <cword><CR>')
-map('n', '<leader>a', ':GitGrep<space>')
+map('n', '<leader>s', ":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') }<CR>")
+map('n', '<leader>a', ":lua require('telescope.builtin').live_grep()<CR>")
