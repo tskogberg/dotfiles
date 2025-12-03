@@ -9,7 +9,10 @@ tmux send-keys -t 'dotfiles:1' 'cd ~/.dotfiles' C-m
 #  send '$1\n'
 #  echo $PWD
 #EOD
-#tmux send-keys -t 'dotfiles:1' 'gl' C-m
+
+tmux new-session -d -s 'devbox'
+tmux send-keys -t 'devbox:1' 'cd /devbox' C-m
+tmux send-keys -t 'devbox:1' 'dev' C-m
 
 projects=(
   'auctionet'
@@ -22,10 +25,10 @@ projects=(
 
 for project in $projects; do
   tmux new-session -d -s $project
-  tmux send-keys -t '$project:1' "cd /projects/$project" C-m
-  tmux send-keys -t '$project:1' 'gl' C-m
-  tmux new-window -t '$project:9' -n 'webserver'
-  tmux send-keys -t '$project:9' "cd /projects/$project" C-m
+  tmux send-keys -t "$project:1" "cd /projects/$project" C-m
+  tmux send-keys -t "$project:1" 'gl' C-m
+  tmux new-window -t "$project:9" -n 'webserver'
+  tmux send-keys -t "$project:9" "cd /projects/$project" C-m
 done
 
 # Project specific commands
