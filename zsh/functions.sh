@@ -139,3 +139,10 @@ loop_me() {
     sleep "${2:=1}";
   done
 }
+
+ollama_update() {
+  ollama list | awk 'NR>1 {print $1}' | while read package; do
+    echo "Updating $package..."
+    ollama pull "$package"
+  done
+}
