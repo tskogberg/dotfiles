@@ -2,3 +2,4 @@ oh-my-zsh/
 tmp/
 vim/view
 tmux/resurrect/
+bin/claude
