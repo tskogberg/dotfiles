@@ -1,5 +1,6 @@
 # Set UTF-8 as default
 export LANG=sv_SE.UTF-8
+export LC_ALL=sv_SE.UTF-8
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
