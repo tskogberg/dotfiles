@@ -1,19 +1,14 @@
 #!/bin/zsh
 
+# --- Global Sessions Setup ---
 tmux new-session -d -s 'dotfiles'
 tmux send-keys -t 'dotfiles:1' 'cd ~/.dotfiles' C-m
-
-#expect 'Enter passphrase for /home/tomas/.ssh/id_ed25519:'
-#/usr/bin/expect - <<EOD
-#  read -s PWD
-#  send '$1\n'
-#  echo $PWD
-#EOD
 
 tmux new-session -d -s 'devbox'
 tmux send-keys -t 'devbox:1' 'cd /devbox' C-m
 tmux send-keys -t 'devbox:1' 'dev' C-m
 
+# --- Project List ---
 projects=(
   'auctionet'
   'porter'
@@ -23,49 +18,136 @@ projects=(
   'skipper'
 )
 
+# --- Parallel Setup: Execute all 'gl' commands ---
+# 1. Initialize an array to hold all marker files
+MARKER_FILES=()
+
 for project in $projects; do
-  tmux new-session -d -s $project
+  echo "Starting tmux session for project: $project"
+
+  # Define Marker File
+  MARKER_FILE="/tmp/tmux_wait_${project}_$(date +%s)_$$"
+
+  # Add the marker file path to our array for later waiting
+  MARKER_FILES+=("$MARKER_FILE")
+
+  # Create session window 1
+  tmux new-session -d -s "$project"
   tmux send-keys -t "$project:1" "cd /projects/$project" C-m
-  tmux send-keys -t "$project:1" 'gl' C-m
-  tmux new-window -t "$project:9" -n 'webserver'
+
+  # Execute 'gl' and create the marker file on success
+  # Execution is non-blocking, the script moves immediately to the next project
+  tmux send-keys -t "$project:1" "gl && touch $MARKER_FILE" C-m
+
+  # Create the 'webserver' window explicitly at index 9
+  tmux new-window -d -t "$project:9" -n 'webserver'
   tmux send-keys -t "$project:9" "cd /projects/$project" C-m
 done
 
-# Project specific commands
+# --- Synchronizing Point: Wait for ALL 'gl' commands to finish ---
+echo "\nWaiting for all 'gl' commands to finish across all sessions (Max 5 minutes)..."
 
-# core
-#tmux send-keys -t 'auctionet:1' 'dev; tmux wait-for -S dev-done' C-m
-#tmux wait-for dev-done
-tmux send-keys -t 'auctionet:1' 'dev' C-m
-tmux send-keys -t 'auctionet:1' 'rake app:reset' C-m
-tmux send-keys -t 'auctionet:9' 'dev web'
+TIMEOUT_SECONDS=300
+START_TIME=$SECONDS
+
+# 2. Wait for all files in the MARKER_FILES array to exist
+while (( ${#MARKER_FILES[@]} > 0 )); do
+
+  # Check for timeout
+  if (( SECONDS - START_TIME >= TIMEOUT_SECONDS )); then
+    echo "🛑 Timeout reached! Not all initial setup tasks completed."
+    break
+  fi
+
+  # Create a new array for files that are still missing
+  MISSING_FILES=()
+
+  # Check each marker file
+  for file in $MARKER_FILES; do
+    if [ ! -f "$file" ]; then
+      MISSING_FILES+=("$file")
+    fi
+  done
+
+  # Update the MARKER_FILES array to only contain the missing files
+  MARKER_FILES=("${MISSING_FILES[@]}")
+
+  if (( ${#MARKER_FILES[@]} > 0 )); then
+    echo "   ... ${#MARKER_FILES[@]} project(s) remaining."
+    sleep 2 # Check less frequently while waiting for multiple tasks
+  fi
+done
+
+# 3. Cleanup all markers and report
+if (( ${#MARKER_FILES[@]} == 0 )); then
+  echo "✅ All initial 'gl' commands finished successfully."
+  rm -f /tmp/tmux_wait_*_$$ # Clean up all markers created in this run
+else
+  # Only clean up files that were found
+  for file in "${MARKER_FILES[@]}"; do
+    rm -f $(echo $file | sed 's/\.missing$//')
+  done
+fi
+
+# --- Project Specific Commands (Now Guaranteed to Run AFTER ALL 'gl' tasks complete/timeout) ---
+
+# 1. Define Marker File and Timeout for 'auctionet' specific commands
+AUCTIONET_MARKER_FILE="/tmp/tmux_wait_auctionet_reset_$(date +%s)_$$"
+TIMEOUT_SECONDS_RESET=300
+START_TIME_RESET=$SECONDS
+
+# auctionet (core)
+# Execute dev and create the marker file on success
+tmux send-keys -t 'auctionet:1' "dev && touch $AUCTIONET_MARKER_FILE" C-m
+
+echo "Waiting for 'dev' in auctionet (Max $TIMEOUT_SECONDS_RESET seconds)..."
+
+# 2. Wait Loop with Timeout Check (Sequential wait for the 'reset' command)
+while [ ! -f "$AUCTIONET_MARKER_FILE" ]; do
+  if (( SECONDS - START_TIME_RESET >= TIMEOUT_SECONDS_RESET )); then
+    echo "🛑 Timeout reached! 'rake app:reset' took too long or failed. Continuing anyway."
+    break
+  fi
+  sleep 1
+done
+
+# 3. Cleanup Marker File
+if [ -f "$AUCTIONET_MARKER_FILE" ]; then
+  rm "$AUCTIONET_MARKER_FILE"
+  echo "✅ 'dev' finished for auctionet. Launching web server."
+fi
+
+# Execute rake app:reset and create the marker file on success
+tmux send-keys -t 'auctionet:1' "rake app:reset" C-m
+
+# 4. Start the web server
+tmux send-keys -t 'auctionet:webserver' 'dev web' C-m
 tmux select-window -t 'auctionet:1'
 
 # porter
 tmux send-keys -t 'porter:1' 'dev update' C-m
-tmux send-keys -t 'porter:9' 'dev web'
+tmux send-keys -t 'porter:webserver' 'dev web' C-m
 tmux select-window -t 'porter:1'
 
 # logan
 tmux send-keys -t 'logan:1' 'dev update' C-m
-tmux send-keys -t 'logan:9' 'dev web'
+tmux send-keys -t 'logan:webserver' 'dev web' C-m
 tmux select-window -t 'logan:1'
 
 # neopris
 tmux send-keys -t 'neopris:1' 'dev update' C-m
-tmux send-keys -t 'neopris:9' 'dev web'
+tmux send-keys -t 'neopris:webserver' 'dev web' C-m
 tmux select-window -t 'neopris:1'
 
 # ex-remit
-# tmux send-keys -t 'ex-remit:1' 'dev update' C-m
 tmux send-keys -t 'ex-remit:1' 'dev update' C-m
-tmux send-keys -t 'ex-remit:9' 'dev web'
+tmux send-keys -t 'ex-remit:webserver' 'dev web' C-m
 tmux select-window -t 'ex-remit:1'
 
 # skipper
 tmux send-keys -t 'skipper:1' 'make sh' C-m
-tmux send-keys -t 'skipper:9' 'make dev'
+tmux send-keys -t 'skipper:webserver' 'make dev' C-m
 tmux select-window -t 'skipper:1'
 
-# Attach to core
+# Attach to first project (auctionet)
 tmux attach-session -t ${projects[@]:0:1}
