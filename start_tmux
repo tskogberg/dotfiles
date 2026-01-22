@@ -45,9 +45,9 @@ for project in $projects; do
 done
 
 # --- Synchronizing Point: Wait for ALL 'gl' commands to finish ---
-echo "\nWaiting for all 'gl' commands to finish across all sessions (Max 5 minutes)..."
+echo "\nWaiting for all 'gl' commands to finish across all sessions (Max 3 minutes)..."
 
-TIMEOUT_SECONDS=300
+TIMEOUT_SECONDS=180
 START_TIME=$SECONDS
 
 # 2. Wait for all files in the MARKER_FILES array to exist
@@ -93,7 +93,7 @@ fi
 
 # 1. Define Marker File and Timeout for 'auctionet' specific commands
 AUCTIONET_MARKER_FILE="/tmp/tmux_wait_auctionet_reset_$(date +%s)_$$"
-TIMEOUT_SECONDS_RESET=300
+TIMEOUT_SECONDS_RESET=180
 START_TIME_RESET=$SECONDS
 
 # auctionet (core)
